@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veranstaltungseinladungen</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="container">
+    <button id="toggleTheme" class="theme-btn">
+        🌙 Dark Mode
+    </button>
+
+    <h2>Einladung zur Veranstaltung</h2>
+
+    <form id="invitationForm">
+        <label>
+            Titel
+            <input type="text" id="title" />
+        </label>
+
+        <label>
+            Datum & Uhrzeit
+            <input type="datetime-local" id="date" />
+        </label>
+
+        <label>
+            Ort
+            <input type="text" id="place" />
+        </label>
+
+        <label>
+            Beschreibung
+            <textarea id="comment"></textarea>
+        </label>
+
+        <h3>Teilnehmer</h3>
+
+        <div class="participant-form">
+            <input type="text" id="fName" placeholder="Vorname" />
+            <input type="text" id="lName" placeholder="Nachname" />
+            <input type="email" id="email" placeholder="E-Mail" />
+            <button type="button" id="addParticipant">Hinzufügen</button>
+        </div>
+
+        <ul id="participantList"></ul>
+
+        <button type="submit" class="submit-btn">Einladungen senden</button>
+    </form>
+</main>
+
+<script src="main.js" defer></script>
+</body>
+</html>

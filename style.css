@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.participant-form {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.participant-form input {
+    flex: 1;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    margin-top: 15px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+li button {
+    background: none;
+    border: none;
+    color: red;
+}
+/* Dark Mode */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+}
+
+body.dark input,
+body.dark textarea {
+    background: #2a2a2a;
+    color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+body.dark button {
+    background: #333;
+    color: #fff;
+}
+
+.theme-btn {
+    margin-bottom: 15px;
+    background: transparent;
+    border: 1px solid #aaa;
+}
