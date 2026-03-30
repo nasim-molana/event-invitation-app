@@ -1,54 +1,144 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Veranstaltungseinladungen</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventify – Event Invitation App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<main class="container">
-    <button id="toggleTheme" class="theme-btn">
-        🌙 Dark Mode
-    </button>
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo">Eventify</div>
+    <nav class="nav">
+      <a href="#app">App</a>
+    </nav>
+  </div>
+</header>
 
-    <h2>Einladung zur Veranstaltung</h2>
+<main>
 
-    <form id="invitationForm">
-        <label>
-            Titel
-            <input type="text" id="title" />
-        </label>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
 
-        <label>
-            Datum & Uhrzeit
-            <input type="datetime-local" id="date" />
-        </label>
+      <div class="hero-text">
+        <p class="eyebrow">Plan better events</p>
 
-        <label>
-            Ort
-            <input type="text" id="place" />
-        </label>
+        <h1>Create beautiful event invitations in minutes</h1>
 
-        <label>
-            Beschreibung
-            <textarea id="comment"></textarea>
-        </label>
+        <p class="hero-description">
+          A simple and clean tool to create events, manage guests,
+          and send invitations easily.
+        </p>
 
-        <h3>Teilnehmer</h3>
+        <a href="#app" class="btn btn-primary">
+          Create Invitation
+        </a>
+      </div>
 
-        <div class="participant-form">
-            <input type="text" id="fName" placeholder="Vorname" />
-            <input type="text" id="lName" placeholder="Nachname" />
-            <input type="email" id="email" placeholder="E-Mail" />
-            <button type="button" id="addParticipant">Hinzufügen</button>
+      <div class="hero-preview">
+        <div class="preview-card">
+          <h3>Birthday Dinner</h3>
+          <p>Friday, 7:30 PM</p>
+          <p>Downtown Restaurant</p>
+          <span>12 Guests Invited</span>
         </div>
+      </div>
 
-        <ul id="participantList"></ul>
+    </div>
+  </section>
 
-        <button type="submit" class="submit-btn">Einladungen senden</button>
-    </form>
+  <!-- App Section -->
+  <section id="app" class="app-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Interactive Demo</p>
+        <h2>Create your invitation</h2>
+        <p>Fill in the details, add guests, and send invitations.</p>
+      </div>
+
+      <div class="app-card">
+
+        <!-- Global Form Error -->
+        <div id="form-error" class="form-error hidden"></div>
+
+        <form id="event-form">
+
+          <!-- Event Details -->
+          <div class="form-section">
+            <h3 class="form-section-title">Event Details</h3>
+
+            <div class="form-group">
+              <label for="title">Event Title</label>
+              <input type="text" id="title" placeholder="e.g. Birthday Party">
+              <div class="error-message" id="title-error"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date">
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="e.g. Berlin">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" rows="3"></textarea>
+            </div>
+          </div>
+
+          <!-- Participants -->
+          <div class="form-section">
+            <h3 class="form-section-title">Participants</h3>
+
+            <!-- Participants Error -->
+            <div id="participants-error" class="error-message"></div>
+
+            <!-- Inputs -->
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="fName" placeholder="First Name">
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="lName" placeholder="Last Name">
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email">
+              </div>
+            </div>
+
+            <!-- List -->
+            <div id="participants-list"></div>
+
+            <button type="button" id="add-participant" class="btn btn-secondary">
+              + Add Participant
+            </button>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-section">
+            <button type="submit" id="submit-btn" class="btn btn-primary full-width">
+              Send Invitations
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <script src="main.js" defer></script>
