@@ -161,38 +161,46 @@ function removeParticipant(id) {
 // ============================
 form.addEventListener('submit', function (e) {
 
+    e.preventDefault();
+
     clearFormError();
+    clearSuccess();
 
     const isTitleValid = validateTitle();
 
-    if (!isTitleValid) {
-        e.preventDefault();
-        return;
-    }
+    if (!isTitleValid) return;
 
     const dateValue = dateInput.value;
     const selectedDate = new Date(dateValue);
 
     if (!dateValue || Number.isNaN(selectedDate.getTime())) {
         showFormError("Please select a valid date");
-        e.preventDefault();
         return;
     }
 
     if (selectedDate.getTime() < Date.now()) {
         showFormError("Date must be in the future");
-        e.preventDefault();
         return;
     }
 
     if (participants.length === 0) {
         showFormError("At least one participant is required");
-        e.preventDefault();
         return;
     }
 
-    // success (temporary)
-    console.log("Invitations sent (simulation)");
+    // 🔥 loading start
+    setLoading(true);
+
+    setTimeout(() => {
+        setLoading(false);
+
+        showSuccess("Invitations sent successfully!");
+
+        form.reset();
+        participants.length = 0;
+        list.innerHTML = "";
+
+    }, 1200);
 });
 
 
@@ -217,4 +225,27 @@ if (toggleBtn) {
 
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
+}
+const submitBtn = document.getElementById("submit-btn");
+
+function setLoading(isLoading) {
+    if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+    } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Invitations";
+    }
+}
+
+const formSuccess = document.getElementById("form-success");
+
+function showSuccess(message) {
+    formSuccess.textContent = message;
+    formSuccess.classList.remove("hidden");
+}
+
+function clearSuccess() {
+    formSuccess.textContent = "";
+    formSuccess.classList.add("hidden");
 }
