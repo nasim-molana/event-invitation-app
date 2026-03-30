@@ -2,43 +2,48 @@
 
 A modern, responsive frontend application for creating and managing event invitations, built with **vanilla JavaScript**.
 
-This project has been refactored from a basic practice app into a **product-style landing page + interactive form**, focusing on clean UI, user experience, and maintainable code.
+This project has been refactored from a basic practice app into a **product-style landing page + interactive form**, with a strong focus on clean UI, user experience, and maintainable code.
+
+---
+
+##  Preview
+
+<p align="center">
+  <img src="./assets/images/eventify-preview.png" width="800" />
+</p>
 
 ---
 
 ## ✨ Features
 
-### 🧾 Event Management
+###  Event Management
 
 * Create event details (title, date, location, description)
 * Real-time validation for user inputs
 * Inline error messages (no disruptive alerts)
 
-### 👥 Participants Handling
+###  Participants Handling
 
 * Add and remove participants dynamically
 * Email validation with immediate feedback
-* Clear and structured participant list
+* Structured and readable participant list
 
-### 🎯 UX Improvements
+###  UX Improvements
 
 * Structured form sections (Event Details / Participants)
-* Inline validation with visual feedback (error/success states)
+* Inline validation with visual feedback (error / success states)
 * Non-blocking UI error system (no alert popups)
+* Disabled button and loading state during submission
 
-### 🎨 UI & Design
+###  UI & Design
 
 * Landing page layout (Hero section + App section)
 * Clean and modern design with proper spacing and hierarchy
 * Responsive layout for different screen sizes
 
-### 🌙 Extra
-
-* Dark mode with localStorage persistence
-
 ---
 
-## 🛠️ Technologies
+##  Technologies
 
 * HTML5
 * CSS3 (custom styling, no frameworks)
@@ -46,7 +51,7 @@ This project has been refactored from a basic practice app into a **product-styl
 
 ---
 
-## 🧠 Key Focus
+##  Key Focus
 
 This project focuses on:
 
@@ -54,10 +59,11 @@ This project focuses on:
 * Improving UX with real-time feedback
 * Structuring UI like a real-world product
 * Avoiding anti-patterns (e.g., alert-based validation)
+* Managing UI state without frameworks
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. Clone the repository:
 
@@ -79,16 +85,16 @@ cd event-invitation-app
 
 ---
 
-## 🔮 Next Steps
+##  Next Steps
 
-* Add loading state on form submission
-* Add success feedback (toast / confirmation UI)
+* Add live event preview (dynamic UI updates)
 * Improve accessibility (ARIA, keyboard navigation)
-* Enhance animations and transitions
+* Add micro-interactions and animations
+* Optional: integrate backend for real email sending
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * Email sending is simulated (no backend)
 * This is a frontend-focused project designed for portfolio purposes
